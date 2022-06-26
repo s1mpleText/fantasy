@@ -1,0 +1,19 @@
+.logo {
+  width: 50px;
+  height: 50px;
+}
+.navbar {
+  padding: 1rem 1rem;
+}
+main {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(2, auto);
+  grid-template-areas: 'main main main main';
+  gap: 5px;
+}
+.main-card-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

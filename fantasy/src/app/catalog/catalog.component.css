@@ -1,0 +1,49 @@
+p, h2 {
+  margin: 0;
+}
+.close-button {
+  cursor: pointer;
+}
+.logo {
+  width: 50px;
+  height: 50px;
+}
+.navbar {
+  padding: 1rem 1rem;
+}
+::ng-deep .mat-dialog-container {
+  border-radius: 0;
+  padding: 0;
+  box-shadow: none;
+}
+::ng-deep .cdk-overlay-dark-backdrop {
+  background: transparent;
+  transition: none;
+}
+::ng-deep .cdk-global-overlay-wrapper {
+  opacity: 0;
+}
+.main-catalog-content {
+  display: grid;
+  grid-template-rows: repeat(4, auto);
+  grid-template-columns: repeat(4, auto);
+  gap: 40px 40px;
+}
+.catalog-element {
+  display: grid;
+  grid-template-columns: 40px auto;
+  grid-template-rows: 40px auto;
+  grid-template-areas: 'card-image card-heading'
+                       'card-image card-text';
+  gap: 10px 10px;
+}
+.catalog-element-text p {
+  color: darkgray;
+  cursor: pointer;
+}
+.catalog-element-text p:hover{
+  color: indianred;
+}
+.catalog-element-text h2:hover{
+  color: indianred;
+}

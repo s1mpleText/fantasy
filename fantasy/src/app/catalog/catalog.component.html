@@ -1,0 +1,21 @@
+<header class="navbar container">
+  <img src="https://hassle.online/_nuxt/img/610077f.svg" class="logo">
+  <mat-icon mat-button (click)="onNoClick()" class="close-button">close</mat-icon>
+</header>
+<main class="container">
+  <h1 class="m-4" style="margin-left: 0!important;">Каталог</h1>
+  <div class="main-catalog-content">
+    <div class="catalog-element" *ngFor="let in of arr(16); let i = index">
+      <img src="https://res.cloudinary.com/lmru-test/image/upload/d_placeholder.jpg,f_auto,q_90,w_80,h_80,dpr_1/v1/elbrus/images/catalog-popup-images/version5/santehnika.jpg" style="grid-area: card-image; width: 100%">
+<!--      <div style="width: 25px; height: 25px; background: black; grid-area: card-image; align-self: start"></div>-->
+      <div class="align-items-center d-flex catalog-element-text"><h2 style="cursor: pointer;">Заголовок</h2></div>
+      <div class="catalog-element-text">
+        <p>Какой-то интересный текст</p>
+        <p>Какой-то интересный текст</p>
+        <p>Какой-то интересный текст</p>
+        <h5 class="mt-1" style="cursor: pointer">Еще 44</h5>
+      </div>
+
+    </div>
+  </div>
+</main>
