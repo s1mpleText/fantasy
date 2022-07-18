@@ -6,7 +6,7 @@ import {CatalogComponent} from "./catalog/catalog.component";
 const routes: Routes = [
   // { path: '', redirectTo: 'home', pathMatch: 'full'},
   { path: '', component: HomeComponent},
-  { path: 'catalog', component: CatalogComponent},
+  { path: 'catalogue', component: CatalogComponent},
 ];
 
 @NgModule({

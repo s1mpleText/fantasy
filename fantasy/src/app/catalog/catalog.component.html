@@ -1,21 +1,33 @@
 <header class="navbar container">
-  <img src="https://hassle.online/_nuxt/img/610077f.svg" class="logo">
+  <a class="logo">FANTASY</a>
   <mat-icon mat-button (click)="onNoClick()" class="close-button">close</mat-icon>
 </header>
-<main class="container">
-  <h1 class="m-4" style="margin-left: 0!important;">Каталог</h1>
-  <div class="main-catalog-content">
-    <div class="catalog-element" *ngFor="let in of arr(16); let i = index">
-      <img src="https://res.cloudinary.com/lmru-test/image/upload/d_placeholder.jpg,f_auto,q_90,w_80,h_80,dpr_1/v1/elbrus/images/catalog-popup-images/version5/santehnika.jpg" style="grid-area: card-image; width: 100%">
-<!--      <div style="width: 25px; height: 25px; background: black; grid-area: card-image; align-self: start"></div>-->
-      <div class="align-items-center d-flex catalog-element-text"><h2 style="cursor: pointer;">Заголовок</h2></div>
-      <div class="catalog-element-text">
-        <p>Какой-то интересный текст</p>
-        <p>Какой-то интересный текст</p>
-        <p>Какой-то интересный текст</p>
-        <h5 class="mt-1" style="cursor: pointer">Еще 44</h5>
-      </div>
+<!--<main class="container">-->
+<!--&lt;!&ndash;  <a *ngIf="title != 'Каталог'" (click)="returnBack()">Назад</a>&ndash;&gt;-->
+<!--  <h2 class="m-4" style="margin-left: 0!important;"><mat-icon *ngIf="title != 'Каталог'" (click)="returnBack()">arrow_back_ios</mat-icon> {{title}}</h2>-->
+<!--  <div class="main-catalog-content">-->
+<!--    <div class="catalog-element" *ngFor="let element of viewCollection;">-->
+<!--      <div class="d-flex catalog-element-text"><h5 (click)="openNextLevel(element)" style="cursor: pointer;">{{element?.name}}</h5></div>-->
+<!--      <div class="catalog-element-text">-->
+<!--        <p *ngFor="let index of checkLengthChildElements(element.data);">{{element.data[index]?.name}}</p>-->
+<!--        <h5 *ngIf="checkLengthChildElements(element.data).length == 3 && element?.data.length > 3" class="mt-1" style="cursor: pointer">Еще {{element?.data.length - 3}}</h5>-->
+<!--      </div>-->
 
+<!--    </div>-->
+<!--  </div>-->
+<!--</main>-->
+
+<main class="container">
+  <!--  <a *ngIf="title != 'Каталог'" (click)="returnBack()">Назад</a>-->
+  <h2 class="m-4" style="margin-left: 0!important;"><mat-icon *ngIf="title != 'Каталог'" (click)="returnBack()">arrow_back_ios</mat-icon> {{title}}</h2>
+  <div class="row justify-content-between no-gutters test">
+    <div *ngFor="let element of viewCollection;" [ngClass]="(element.data)?'catalog-element col-md-3':'catalog-third-elements col-md-4'">
+        <hr>
+        <h5 (click)="openNextLevel(element)" style="cursor: pointer;" class="mb-3 hov-red">{{element?.name}}</h5>
+        <p *ngFor="let index of checkLengthChildElements(element.data);" class="catalog-element-text hov-red" (click)="openThirdLevel(element.data[index])">{{element.data[index]?.name}}</p>
+        <p *ngIf="checkLengthChildElements(element.data).length == 3 && element?.data.length > 3" class="mt-2"><a class="more hov-red" (click)="openNextLevel(element)">Еще {{element?.data.length - 3}}</a></p>
     </div>
+
   </div>
 </main>
+

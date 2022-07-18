@@ -1,12 +1,23 @@
-p, h2 {
+p, h1, h2, h3, h4, h5 {
   margin: 0;
+}
+a {
+  color: black;
+  cursor: pointer;
+  text-decoration: none;
 }
 .close-button {
   cursor: pointer;
 }
 .logo {
-  width: 50px;
   height: 50px;
+  align-items: center;
+  display: flex;
+  font-weight: 500;
+  font-size: 18px;
+  cursor: default;
+  text-decoration: none;
+  color: black;
 }
 .navbar {
   padding: 1rem 1rem;
@@ -25,25 +36,84 @@ p, h2 {
 }
 .main-catalog-content {
   display: grid;
-  grid-template-rows: repeat(4, auto);
-  grid-template-columns: repeat(4, auto);
+  grid-template-rows: repeat(4, 150px);
+  grid-template-columns: repeat(4, 250px);
   gap: 40px 40px;
 }
 .catalog-element {
-  display: grid;
-  grid-template-columns: 40px auto;
-  grid-template-rows: 40px auto;
-  grid-template-areas: 'card-image card-heading'
-                       'card-image card-text';
-  gap: 10px 10px;
+  min-width: 270px;
+  min-height: 180px
 }
-.catalog-element-text p {
+.catalog-element h5, p {
+  max-width: 250px;
+}
+.catalog-element-text {
   color: darkgray;
   cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-.catalog-element-text p:hover{
+mat-icon {
+  cursor: pointer;
+}
+.more {
+  font-size: 14px;
+}
+.hov-red:hover {
   color: indianred;
 }
-.catalog-element-text h2:hover{
+
+.catalog-third-elements h5{
+  font-weight: unset;
+  font-size: unset;
+  line-height: unset;
+
+
+  color: black;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.catalog-third-elements h5:hover {
   color: indianred;
+}
+
+hr {
+  display: none;
+}
+.test > .catalog-element:first-child hr {
+  opacity: 0;
+}
+
+@media (max-width: 1200px) {
+  .catalog-element {
+    min-width: 300px;
+  }
+  .catalog-element h5, p {
+    max-width: 280px;
+  }
+}
+
+@media (max-width: 992px) {
+  .catalog-element {
+    min-width: 340px;
+  }
+  .catalog-element h5, p {
+    max-width: 320px;
+  }
+}
+
+@media (max-width: 768px) {
+  .catalog-element {
+    min-width: 100%;
+  }
+  .catalog-element h5, p {
+    max-width: 100%;
+  }
+  hr {
+    display: block;
+  }
 }

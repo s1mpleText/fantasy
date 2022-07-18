@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CatalogComponent} from "../catalog/catalog.component";
 import {MatDialog} from "@angular/material/dialog";
+import {CategoryOptionsService} from "../services/categoryOptions.service";
 
 @Component({
   selector: 'app-home',
@@ -9,9 +10,12 @@ import {MatDialog} from "@angular/material/dialog";
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  constructor(public dialog: MatDialog, public categoryOptions: CategoryOptionsService) { }
 
   ngOnInit(): void {
+    this.categoryOptions.findAll().subscribe(data => {
+      console.log(data)
+    })
   }
 
   openDialog(): void {
